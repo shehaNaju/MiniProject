@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "69104439777",
+    "project_id": "blooddonationapp-60041",
+    "storage_bucket": "blooddonationapp-60041.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69104439777:android:78ef3e35041ad69e3102a0",
+        "android_client_info": {
+          "package_name": "com.example.blood_bank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK0IRC_yTTDVxXn75F975OJTLVGeA3q54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
