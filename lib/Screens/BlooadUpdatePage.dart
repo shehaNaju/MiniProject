@@ -54,6 +54,7 @@ class _bloodupdatepageState extends State<bloodupdatepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[400],
         title: Text("Update blood list"),
       ),
       body: Padding(
@@ -104,6 +105,7 @@ class _bloodupdatepageState extends State<bloodupdatepage> {
                                       ),
                                       SizedBox(width: 8.0),
                                       IconButton(
+                                        color: Colors.green,
                                           onPressed: () {
                                             String count = bloodgrouplist[index]
                                                 .textFieldData;
@@ -121,6 +123,7 @@ class _bloodupdatepageState extends State<bloodupdatepage> {
                                               ? Icons.local_dining
                                               : Icons.check_circle)),
                                       IconButton(
+                                        color: Colors.red,
                                           onPressed: () {
                                             String id =
                                                 bloodgrouplist[index].id;
@@ -163,6 +166,7 @@ class _bloodupdatepageState extends State<bloodupdatepage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+        foregroundColor: Colors.red,
         onPressed: () {
           Navigator.push(
             context,

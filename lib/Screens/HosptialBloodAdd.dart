@@ -58,117 +58,108 @@ class _hospitalbloodaddState extends State<hospitalbloodadd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Add your blood groups and unit"),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-
-              //Flexible(fit: FlexFit.tight, child: SizedBox()),
-              bloodgrouplist.isEmpty
-                  ? const CircularProgressIndicator()
-                  : Container(
-                      height: 500,
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: ListView.builder(
-                              itemCount: bloodgrouplist.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ListTile(
-                                    title: Row(
-                                      children: [
-                                        Checkbox(
-                                          value:
-                                              bloodgrouplist[index].isChecked,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              bloodgrouplist[index].isChecked =
-                                                  value!;
-
-                                              if (value) {
-                                                selectedItems
-                                                    .add(bloodgrouplist[index]);
-                                              } else {
-                                                selectedItems.remove(
-                                                    bloodgrouplist[index]);
-                                              }
-                                            });
-                                          },
-                                        ),
-                                        SizedBox(width: 8.0),
-                                        Text(bloodgrouplist[index].name),
-                                        SizedBox(width: 8.0),
-                                        Expanded(
-                                          child: TextField(
-                                            onChanged: (text) {
-                                              bloodgrouplist[index]
-                                                  .textFieldData = text;
-                                              ////////// itemList[index].textFieldData = text;
+      // appBar: AppBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Center(child: Text("Add your blood groups and units",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red[900]),)),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+      
+                //Flexible(fit: FlexFit.tight, child: SizedBox()),
+                bloodgrouplist.isEmpty
+                    ? const CircularProgressIndicator()
+                    : Container(
+                        height: 500,
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: ListView.builder(
+                                itemCount: bloodgrouplist.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ListTile(
+                                      title: Row(
+                                        children: [
+                                          Checkbox(
+                                            value:
+                                                bloodgrouplist[index].isChecked,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                bloodgrouplist[index].isChecked =
+                                                    value!;
+      
+                                                if (value) {
+                                                  selectedItems
+                                                      .add(bloodgrouplist[index]);
+                                                } else {
+                                                  selectedItems.remove(
+                                                      bloodgrouplist[index]);
+                                                }
+                                              });
                                             },
-                                            decoration: InputDecoration(
-                                              hintText: 'Enter Unit count',
+                                          ),
+                                          SizedBox(width: 8.0),
+                                          Text(bloodgrouplist[index].name),
+                                          SizedBox(width: 8.0),
+                                          Expanded(
+                                            child: TextField(
+                                              onChanged: (text) {
+                                                bloodgrouplist[index]
+                                                    .textFieldData = text;
+                                                ////////// itemList[index].textFieldData = text;
+                                              },
+                                              decoration: InputDecoration(
+                                                hintText: 'Enter Unit count',
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                );
-                              }),
+                                  );
+                                }),
+                          ),
                         ),
                       ),
-                    ),
-              Container(
-                  width: 300,
-                  padding: const EdgeInsets.only(top: 3, left: 3),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _submit(selectedItems, widget.hsname, widget.hsaddress,
-                          widget.hsdistrict, widget.placeid, widget.mobileno);
-                    },
-                    child: isloading == true
-                        ? CircularProgressIndicator()
-                        : Text(
-                            "Save",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                    style: ElevatedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      backgroundColor: Colors.red[900],
-                    ),
-                  )),
-            ],
+                Container(
+                    width: 300,
+                    padding: const EdgeInsets.only(top: 20, left: 3),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _submit(selectedItems, widget.hsname, widget.hsaddress,
+                            widget.hsdistrict, widget.placeid, widget.mobileno);
+                      },
+                      child: isloading == true
+                          ? CircularProgressIndicator()
+                          : Text(
+                              "Save",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                      style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: Colors.red[900],
+                      ),
+                    )),
+              ],
+            ),
           ),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) =>
-      //             SelectedItemsPage(selectedItems: selectedItems),
-      //       ),
-      //     );
-      //   },
-      //   child: Icon(Icons.check),
-      // ),
+  
     );
   }
 

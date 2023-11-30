@@ -31,15 +31,16 @@ class AdminPage extends StatelessWidget {
                 height: 18,
               ),
               Container(
-                width: 250,
+                width: 380,
                 height: 250,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade50,
-                  shape: BoxShape.circle,
+                  color: Color(0xfff7f6fb),
+                  shape: BoxShape.rectangle,
                 ),
                 child: Image.asset(
-                  'assets/images/illustration-1.png',
+                  'assets/images/Otp.webp',fit: BoxFit.fill,
                 ),
+                
               ),
               SizedBox(
                 height: 100,
@@ -47,7 +48,7 @@ class AdminPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(28),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0xfff7f6fb),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
@@ -66,7 +67,7 @@ class AdminPage extends StatelessWidget {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.purple),
+                              MaterialStateProperty.all<Color>(Colors.red),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
@@ -99,7 +100,7 @@ class AdminPage extends StatelessWidget {
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.purple),
+                            MaterialStateProperty.all<Color>(Colors.red),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -126,37 +127,3 @@ class AdminPage extends StatelessWidget {
   }
 }  
 
-
-              
-             
-//         Container(
-          
-               
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   borderRadius: BorderRadius.circular(12),
-//                 ),
-//           height: 50,
-//           width: 100,
-//                 child: ElevatedButton(
-//                     onPressed: () {},
-//                     style: TextButton.styleFrom(backgroundColor: Colors.purple),
-//                     child: Text(
-//                       "HOSPITAL",
-//                       style: TextStyle(color: Colors.white),
-//                     ))),
-//                     SizedBox(height: 50,),
-//         Container(
-//           height: 50,
-//           width: 100,
-//               child: ElevatedButton(
-//                 onPressed: () {
-//                    Navigator.push(
-//     context,
-//     MaterialPageRoute(builder: (context) =>   Register()),
-//   );
-//                 },
-//                 style: TextButton.styleFrom(backgroundColor: Colors.purple),
-//                 child: Text("USER"),
-//               ),
-//         ),

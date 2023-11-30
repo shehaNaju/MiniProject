@@ -135,7 +135,7 @@ class _FloattingScreenState extends State<FloattingScreen2> {
           child: ListView(children: [
             Center(
                 child: Text(
-              "Request for the doners",
+              "Request for the Acceptors",
               style: TextStyle(
                   color: Colors.red[400],
                   fontSize: 25,

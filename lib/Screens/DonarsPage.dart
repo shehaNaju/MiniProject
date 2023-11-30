@@ -200,30 +200,76 @@ class _DonarsScreenState extends State<DonarsScreen> {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Card(
-                        child: new ListTile(
-                          leading: new Icon(Icons.search),
-                          title: new TextField(
-                            controller: controller,
-                            decoration: new InputDecoration(
-                                hintText: 'Search the doners',
-                                border: InputBorder.none),
-                            onChanged: _runFilter,
-                          ),
-                          trailing: new IconButton(
-                            icon: new Icon(Icons.cancel),
-                            onPressed: () {
-                              setState(() {
-                                controller.clear();
-                                onSearchTextChanged('');
-                              });
-                            },
-                          ),
-                        ),
+                     Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child:  ListTile(
+                      
+                      // leading:  Icon(Icons.search),
+                      title:  TextField(
+                        
+                        controller: controller,
+                       onChanged: _runFilter,
+
+                        decoration:  InputDecoration(
+                          filled: true,
+                      fillColor: Colors.red,
+                      border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none),
+                          
+                            
+                            hintText: 'Search the doners',
+                             suffixIcon: Icon(Icons.search,color: Colors.black,),
+                 prefixIconColor: Colors.red,
+                            
+                        // onChanged: _runFilter,
+                        )
                       ),
+                      // trailing: new IconButton(
+                      //   icon: new Icon(Icons.cancel),
+                      //   onPressed: () {
+                      //     setState(() {
+                      //       controller.clear();
+                      //       onSearchTextChanged('');
+                      //     });
+                      //   },
+                      // ),
                     ),
+                  ),
+
+                    // Padding(
+                    //   padding:  EdgeInsets.all(8.0),
+                    //   child: new Card(
+                        
+                    //     child: new ListTile(
+                     
+                    //       title: new TextField(
+                    //         controller: controller,
+                    //            onChanged: _runFilter,
+                    //         decoration: new InputDecoration(
+                    //            filled: true,
+                    //   fillColor: Colors.red,
+                    //   border: OutlineInputBorder(
+                    //      borderRadius: BorderRadius.circular(10.0),
+                    // borderSide: BorderSide.none),
+
+                    //             hintText: 'Search the doners',
+                                
+                            // onChanged: _runFilter,
+                          
+                          // trailing: new IconButton(
+                          //   icon: new Icon(Icons.cancel),
+                          //   onPressed: () {
+                          //     setState(() {
+                          //       controller.clear();
+                          //       onSearchTextChanged('');
+                          //     });
+                          //   },
+                          // ),
+                      
+                    
+                  
+                    
                     SizedBox(
                       height: 20,
                     ),

@@ -205,28 +205,108 @@ class _AcceptersScreenState extends State<AcceptersScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: new Card(
-                        child: new ListTile(
-                          leading: new Icon(Icons.search),
-                          title: new TextField(
-                            controller: controller,
-                            decoration: new InputDecoration(
-                                hintText: 'Search the accepters',
-                                border: InputBorder.none),
-                            onChanged: _runFilter,
-                          ),
-                          trailing: new IconButton(
-                            icon: new Icon(Icons.cancel),
-                            onPressed: () {
-                              setState(() {
-                                controller.clear();
-                                onSearchTextChanged('');
-                              });
-                            },
-                          ),
-                        ),
+                       child:  ListTile(
+                      
+                      // leading:  Icon(Icons.search),
+                      title:  TextField(
+                        
+                        controller: controller,
+                       onChanged: _runFilter,
+
+                        decoration:  InputDecoration(
+                          filled: true,
+                      fillColor: Colors.red,
+                      border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none),
+                          
+                            
+                            hintText: 'Search the Acceptors',
+                             suffixIcon: Icon(Icons.search,color: Colors.black,),
+                 prefixIconColor: Colors.red,
+                            
+                        // onChanged: _runFilter,
+                        )
                       ),
+                      // trailing: new IconButton(
+                      //   icon: new Icon(Icons.cancel),
+                      //   onPressed: () {
+                      //     setState(() {
+                      //       controller.clear();
+                      //       onSearchTextChanged('');
+                      //     });
+                      //   },
+                      // ),
                     ),
+                  ),
+
+                    // Padding(
+                    //   padding:  EdgeInsets.all(8.0),
+                    //   child: new Card(
+                        
+                    //     child: new ListTile(
+                     
+                    //       title: new TextField(
+                    //         controller: controller,
+                    //            onChanged: _runFilter,
+                    //         decoration: new InputDecoration(
+                    //            filled: true,
+                    //   fillColor: Colors.red,
+                    //   border: OutlineInputBorder(
+                    //      borderRadius: BorderRadius.circular(10.0),
+                    // borderSide: BorderSide.none),
+
+                    //             hintText: 'Search the doners',
+                                
+                            // onChanged: _runFilter,
+                          
+                          // trailing: new IconButton(
+                          //   icon: new Icon(Icons.cancel),
+                          //   onPressed: () {
+                          //     setState(() {
+                          //       controller.clear();
+                          //       onSearchTextChanged('');
+                          //     });
+                          //   },
+                          // ),
+                      
+                    
+                  
+                    
+                //       child: new Card(
+                //         child: new ListTile(
+                       
+                //           title: new TextField(
+                //             controller: controller,
+                //               onChanged: _runFilter,
+                //             decoration:  InputDecoration(
+                //           filled: true,
+                //       fillColor: Colors.red,
+                //       border: OutlineInputBorder(
+                //          borderRadius: BorderRadius.circular(10.0),
+                //     borderSide: BorderSide.none),
+                          
+                            
+                //             hintText: 'Search the doners',
+                //              suffixIcon: Icon(Icons.search,color: Colors.black,),
+                //  prefixIconColor: Colors.red,
+                            
+                //         // onChanged: _runFilter,
+                //         )
+                          
+                //           ),
+                //           // trailing: new IconButton(
+                //           //   icon: new Icon(Icons.cancel),
+                //           //   onPressed: () {
+                //           //     setState(() {
+                //           //       controller.clear();
+                //           //       onSearchTextChanged('');
+                //           //     });
+                //           //   },
+                //           ),
+                //         ),
+                    
+                  
                     SizedBox(
                       height: 20,
                     ),

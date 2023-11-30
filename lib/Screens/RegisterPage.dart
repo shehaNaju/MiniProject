@@ -150,7 +150,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Form(
             key: _formKey,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding:  EdgeInsets.symmetric(horizontal: 40),
               // height: MediaQuery.of(context).size.height - 50,
               width: double.infinity,
               child: Column(
@@ -159,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      const SizedBox(height: 60.0),
+                       SizedBox(height: 60.0),
                       const Text(
                         "SIGN UP",
                         style: TextStyle(
@@ -168,11 +168,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           color: Colors.red,
                         ),
                       ),
-                      const SizedBox(
+                       SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding:  EdgeInsets.only(left: 20),
                         child: Text(
                           "AND BECOME A DONAR",
                           style: TextStyle(
@@ -183,24 +183,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       )
                     ],
                   ),
+                  SizedBox(height: 20,),
                   Column(
                     children: <Widget>[
-                      TextFormField(
-                        controller: namecontroller,
-                        decoration: InputDecoration(
-                            hintText: "Enter your name ",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(18),
-                                borderSide: BorderSide.none),
-                            fillColor: Colors.red.withOpacity(0.9),
-                            filled: true,
-                            prefixIcon: const Icon(Icons.person)),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please enter your name!';
-                          }
-                          return null;
-                        },
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: TextFormField(
+                          controller: namecontroller,
+                          decoration: InputDecoration(
+                              hintText: "Enter your name ",
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(18),
+                                  borderSide: BorderSide.none),
+                              fillColor: Colors.red.withOpacity(0.9),
+                              filled: true,
+                              prefixIcon: const Icon(Icons.person)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter your name!';
+                            }
+                            return null;
+                          },
+                        ),
                       ),
 
                       const SizedBox(height: 20),

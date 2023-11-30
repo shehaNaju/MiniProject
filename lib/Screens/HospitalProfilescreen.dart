@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 
+import 'package:blood_bank/Mobilennew/mobileneter.dart';
 import 'package:blood_bank/Model/HospitalProfileModel.dart';
 import 'package:blood_bank/Screens/BlooadUpdatePage.dart';
 import 'package:blood_bank/Screens/EditUserprofile.dart';
@@ -129,23 +130,60 @@ class _ProfileScreenState extends State<hospitalProfileScreen> {
                     // SizedBox(height: 30,),
                     Column(
                       children: [
-                        Text(
-                          "Hospital Name: " + mainmodel.hospitalname,
+                    //       TextFormField(
+                    //     decoration: InputDecoration(
+                    //   hintText: "Name : " + name,
+                  
+                    //         border: OutlineInputBorder(
+                    //             borderRadius: BorderRadius.circular(18),
+                    //             borderSide: BorderSide.none),
+                    //         fillColor: Colors.white.withOpacity(0.9),
+                    //         filled: true,
+                    //         prefixIcon: const Icon(Icons.person,color: Colors.red,)),
+                    // ),
+                        TextFormField(
+                           decoration: InputDecoration(
+                        hintText:  "Hospital Name: " + mainmodel.hospitalname,
+                          border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(18),
+                                borderSide: BorderSide.none),
+                            fillColor: Colors.white.withOpacity(0.9),
+                            filled: true,
+                            prefixIcon: const Icon(Icons.person,color: Colors.red,)),
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.normal,fontSize: 15),
                         ),
+                        
                         const SizedBox(height: 20),
-                        Text(
-                          "Address: " + mainmodel.address,
+
+                        TextFormField(
+                            decoration: InputDecoration(
+                        hintText:  "Address: " + mainmodel.address,
+                         border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(18),
+                                borderSide: BorderSide.none),
+                            fillColor: Colors.white.withOpacity(0.9),
+                            filled: true,
+                            prefixIcon: const Icon(Icons.home,color: Colors.red,)),
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.normal,fontSize: 15),
                         ),
+
                         const SizedBox(height: 20),
-                        Text(
-                          "City: " + mainmodel.place,
+
+                        TextFormField(
+                                 decoration: InputDecoration(
+                         hintText: "City: " + mainmodel.place,
+                          border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(18),
+                                borderSide: BorderSide.none),
+                            fillColor: Colors.white.withOpacity(0.9),
+                            filled: true,
+                            prefixIcon: const Icon(Icons.location_on,color: Colors.red,)),
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.normal,fontSize: 15),
                         ),
+
                         SizedBox(height: 20),
                         Padding(
                           padding: const EdgeInsets.all(20.0),
@@ -188,6 +226,7 @@ class _ProfileScreenState extends State<hospitalProfileScreen> {
                                         style: TextStyle(
                                             color: Colors.red, fontSize: 18),
                                       ),
+                                    
                                       Text(
                                         "Units",
                                         style: TextStyle(
@@ -228,30 +267,7 @@ class _ProfileScreenState extends State<hospitalProfileScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        InkWell(
-                          onTap: () async {
-                            showAlertDialog(context);
-                          },
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.lock,
-                                size: 24,
-                              ),
-                              Text(
-                                "Logout",
-                                style: TextStyle(color: Colors.black),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Row(
+                         Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         OutlinedButton(
@@ -290,11 +306,80 @@ class _ProfileScreenState extends State<hospitalProfileScreen> {
                         //       shape: RoundedRectangleBorder(
                         //           borderRadius: BorderRadius.circular(20))),
                         // ),
+                    
+                  
+SizedBox(height: 20,),
+                        OutlinedButton(
+                          onPressed: () async {
+                            showAlertDialog(context);
+                          },
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Icon(
+                                  Icons.lock,
+                                  size: 24,
+                                ),
+                              ),
+                              Text(
+                                "Logout",
+                                style: TextStyle(color: Colors.black),
+                              )
+                              
+                            ],
+                          ),
+                        ),
                       ],
-                    )
+                    ),
+
+                    SizedBox(
+                      height: 30,
+                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     OutlinedButton(
+                    //       onPressed: () {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //                 builder: (context) => EditUserProfileScreen(
+                    //                     name: mainmodel.hospitalname,
+                    //                     address: mainmodel.address,
+                    //                     city: mainmodel.place,
+                    //                     image: mainmodel.image,
+                    //                     type: "1")));
+                    //       },
+                    //       child: Text("Edit",
+                    //           style: TextStyle(
+                    //               fontSize: 15,
+                    //               letterSpacing: 2,
+                    //               color: Colors.black)),
+                    //       style: OutlinedButton.styleFrom(
+                    //           padding: EdgeInsets.symmetric(horizontal: 50),
+                    //           shape: RoundedRectangleBorder(
+                    //               borderRadius: BorderRadius.circular(20))),
+                    //     ),
+                    //     // ElevatedButton(
+                    //     //   onPressed: () {},
+                    //     //   child: Text(
+                    //     //     "SAVE",
+                    //     //     style: TextStyle(
+                    //     //         fontSize: 15,
+                    //     //         letterSpacing: 2,
+                    //     //         color: Colors.white),
+                    //     //   ),
+                    //     //   style: OutlinedButton.styleFrom(
+                    //     //       padding: EdgeInsets.symmetric(horizontal: 50),
+                    //     //       shape: RoundedRectangleBorder(
+                    //     //           borderRadius: BorderRadius.circular(20))),
+                    //     // ),
+                    //   ],
+                    // )
                   ]),
-      ),
-    )));
+     ] ),
+    ))));
   }
 
   showAlertDialog(BuildContext context) {
@@ -318,7 +403,7 @@ class _ProfileScreenState extends State<hospitalProfileScreen> {
 
 
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            context, MaterialPageRoute(builder: (context) => mobileverification()));
       },
     );
 

@@ -185,28 +185,38 @@ class _HomePageState extends State<HomePage> {
 
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child:  Card(
-                      child:  ListTile(
-                        leading:  Icon(Icons.search),
-                        title:  TextField(
-                          controller: controller,
-                          decoration:  InputDecoration(
+                    child:  ListTile(
+                      
+                      // leading:  Icon(Icons.search),
+                      title:  TextField(
+                        
+                        controller: controller,
+                       onChanged: _runFilter,
+
+                        decoration:  InputDecoration(
+                          filled: true,
+                      fillColor: Colors.red,
+                      border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none),
+                          
                             
-                              
-                              hintText: 'Search',
-                               border: InputBorder.none),
-                          onChanged: _runFilter,
-                        ),
-                        trailing: new IconButton(
-                          icon: new Icon(Icons.cancel),
-                          onPressed: () {
-                            setState(() {
-                              controller.clear();
-                              onSearchTextChanged('');
-                            });
-                          },
-                        ),
+                            hintText: 'Search',
+                             suffixIcon: Icon(Icons.search,color: Colors.black,),
+                 prefixIconColor: Colors.red,
+                            
+                        // onChanged: _runFilter,
+                        )
                       ),
+                      // trailing: new IconButton(
+                      //   icon: new Icon(Icons.cancel),
+                      //   onPressed: () {
+                      //     setState(() {
+                      //       controller.clear();
+                      //       onSearchTextChanged('');
+                      //     });
+                      //   },
+                      // ),
                     ),
                   ),
 
@@ -335,7 +345,7 @@ class ChoiceCard extends StatelessWidget {
                       Icons.location_on,
                       color: Colors.red[400],
                     )),
-                Text(choice.address),
+                Text(choice.place.toString()),
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -344,6 +354,7 @@ class ChoiceCard extends StatelessWidget {
                     )),
                 Container(
                   height: 60,
+                  width: 80,
                   child: Center(
                     child: ListView.builder(
                         itemCount: choice.bloodstocks.length,
@@ -354,7 +365,7 @@ class ChoiceCard extends StatelessWidget {
                             child: Container(
                                 // color: Colors.amber,
                                 height: 20,
-                                width: 50,
+                                width: 40,
                                 child: (Text(
                                     choice.bloodstocks[index].bllodgroupname))),
                           );

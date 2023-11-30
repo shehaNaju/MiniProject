@@ -185,6 +185,7 @@ class _RegisterScreenState extends State<RegisterScreenHospital> {
                       )
                     ],
                   ),
+                  SizedBox(height: 30,),
                   Column(
                     children: <Widget>[
                       TextFormField(
@@ -348,55 +349,14 @@ class _RegisterScreenState extends State<RegisterScreenHospital> {
                         ),
                       )),
 
-                  // const Center(child: Text("Or")),
-
-                  // Container(
-                  //   height: 45,
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(25),
-                  //     border: Border.all(
-                  //       color: Colors.red,
-                  //     ),
-                  //     boxShadow: [
-                  //       BoxShadow(
-                  //         color: Colors.white.withOpacity(0.5),
-                  //         spreadRadius: 1,
-                  //         blurRadius: 1,
-                  //         offset: const Offset(0, 1), // changes position of shadow
-                  //       ),
-                  //     ],
-                  //   ),
-                  // child: TextButton(
-                  //   onPressed: () {},
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-
-                  // const SizedBox(width: 18),
-
-                  // const Text("Sign In with Google",
-                  //   style: TextStyle(
-                  //     fontSize: 16,
-                  //     color: Colors.purple,
-                  //   ),
-                  // ),
+                  
                 ],
               ),
             ),
           ),
         ),
 
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: <Widget>[
-        //     const Text("Already have an account?"),
-        //     TextButton(
-        //         onPressed: () {
-        //         },
-        //         child: const Text("Login", style: TextStyle(color: Colors.purple),)
-        //     )
-        //   ],
-        // )
+       
       ),
     );
   }

@@ -62,7 +62,7 @@ class _MyRequestScreenState extends State<MyRequestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // centerTitle: true,
+          centerTitle: true,
 
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +80,7 @@ class _MyRequestScreenState extends State<MyRequestScreen> {
               ),
             ],
           ),
-          backgroundColor: Colors.red.shade300, //<-- SEE HERE
+          backgroundColor: Colors.red[400], //<-- SEE HERE
         ),
         body: isloading == true
             ? Center(child: CircularProgressIndicator())

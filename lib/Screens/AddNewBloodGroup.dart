@@ -192,6 +192,7 @@ class _SelectedItemsPageState extends State<SelectedItemsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red[400],
         title: Text('Selected Items'),
       ),
       body: ListView.builder(
@@ -217,7 +218,7 @@ class _SelectedItemsPageState extends State<SelectedItemsPage> {
                             child: Center(
                               child: Text(
                                 "Save",
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 20,color: Colors.white),
                               ),
                             ),
                           ),

@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 
+import 'package:blood_bank/Mobilennew/mobileneter.dart';
+import 'package:blood_bank/Screens/AddNewBloodGroup.dart';
+import 'package:blood_bank/Screens/DonarsPage.dart';
 import 'package:blood_bank/Screens/EditUserprofile.dart';
 import 'package:blood_bank/Screens/LoginPage.dart';
 import 'package:blood_bank/URL/url.dart';
@@ -177,10 +180,17 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                     ),
 
                      const SizedBox(height: 20),
-                    Text(
-                      "City : " + place,
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                    TextFormField(
+                       decoration: InputDecoration(
+                    hintText:  "City : " + place,
+                     border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(18),
+                                borderSide: BorderSide.none),
+                            fillColor: Colors.white.withOpacity(0.9),
+                            filled: true,
+                             prefixIcon: const Icon(Icons.person,color: Colors.red,)),
+
+                    
                     ),
                     SizedBox(height: 20),
                     // DropdownButton(
@@ -198,10 +208,18 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                     //   },
                     // ),
 
-                    Text(
-                      "Blood Grup: " + blood,
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                         TextFormField(
+                          
+                       decoration: InputDecoration(
+                     hintText: "Blood Group: " + blood,
+                      border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(18),
+                                borderSide: BorderSide.none),
+                            fillColor: Colors.white.withOpacity(0.9),
+                            filled: true,
+                             prefixIcon: const Icon(Icons.person,color: Colors.red,)),
+
+                    
                     ),
                     const SizedBox(height: 20),
                     InkWell(
@@ -295,7 +313,7 @@ class _ProfileScreenState extends State<UserProfileScreen> {
 // chnages here to otp page
 
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            context, MaterialPageRoute(builder: (context) => mobileverification()));
       },
     );
 
